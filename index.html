@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chess — резервный сайт</title>
+<style>:root{color-scheme:dark}body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#12121a;color:#eee;font:15px/1.45 system-ui,sans-serif;padding:16px}
+.c{width:min(94vw,440px);background:#1d1d25;border-radius:16px;padding:24px;text-align:center}a{display:block;margin-top:10px;padding:11px;border-radius:10px;background:#2ea6ff;color:#fff;text-decoration:none}a.s{background:#33333f}p{color:#b8b8c6}</style></head>
+<body><div class="c"><div style="font-size:44px">🛠️</div><h2>Вход временно недоступен</h2><p id="t"></p><a id="r" href="#">Попробовать снова</a><a class="s" id="g" href="#">Вернуться в игру</a>
+<p style="font-size:12px">Это резервная страница (HTTP). Вход и пароли здесь не вводятся.</p></div>
+<script>
+var q=new URLSearchParams(location.search),R=q.get('reason')||'',b=q.get('back')||'';
+var T={maintenance:'На сайте входа идут технические работы.',browser_unsupported:'Твой браузер не поддерживает нужные функции — обнови его.',storage_blocked:'В браузере заблокировано хранилище (режим инкогнито / запрет cookies).',auth_unreachable:'Сайт входа не отвечает.'};
+document.getElementById('t').textContent=T[R]||'Сайт входа или сервер сейчас не отвечает. Игра при этом работает, а результат можно записать позже.';
+var G='https://darkstalke5r.github.io/ChessRandom/';try{var u=new URL(b);if(u.origin==='https://darkstalke5r.github.io'||u.hostname==='localhost')G=u.origin+u.pathname}catch(e){}
+document.getElementById('g').href=G;document.getElementById('r').href='https://chessrandomiauth.devs.li/?r=1&return='+encodeURIComponent(G);
+</script></body></html>
